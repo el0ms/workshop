@@ -1,0 +1,32 @@
+/* Lógico_1: */
+
+CREATE TABLE produto (
+    nome VARCHAR PRIMARY KEY,
+    qualidade VARCHAR
+);
+
+CREATE TABLE funcionario (
+    nome VARCHAR PRIMARY KEY,
+    cpf INTEGER
+);
+
+CREATE TABLE cliente (
+    nome VARCHAR,
+    endereco VARCHAR,
+    contato VARCHAR,
+    cpf INTEGER,
+    PRIMARY KEY (nome, cpf)
+);
+
+CREATE TABLE ouvidoria (
+    email VARCHAR
+);
+
+CREATE TABLE forncecedores (
+    cnpj INTEGER PRIMARY KEY,
+    contato VARCHAR
+);
+ 
+ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2
+    FOREIGN KEY (endereco)
+    REFERENCES funcionario (nome);
