@@ -1,0 +1,106 @@
+create database telemarketing;
+use telemarketing;
+
+
+CREATE TABLE produto (
+    nome VARCHAR(10) PRIMARY KEY,
+    qualidade VARCHAR (10)
+);
+
+CREATE TABLE funcionario (
+    nome VARCHAR(10) PRIMARY KEY,
+    cpf VARCHAR(10)
+);
+#drop table cliente;
+
+CREATE TABLE cliente (
+    nome VARCHAR(10),
+    endereco VARCHAR(10),
+    contato VARCHAR(10),
+    cpf VARCHAR(10),
+    PRIMARY KEY (nome, cpf)
+);
+
+#drop table ouvidoria;         
+
+CREATE TABLE ouvidoria (
+    email VARCHAR(20)
+);
+
+#drop table forncedores;
+
+CREATE TABLE forncecedores (
+    cnpj INTEGER PRIMARY KEY,
+    contato VARCHAR(10)
+);
+ 
+ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2
+    FOREIGN KEY (endereco)
+    REFERENCES funcionario (nome);
+
+
+insert into ouvidoria(email)
+values('aqui@gmail.com');
+
+SELECT email, COUNT(*) AS vezes_cadastrados FROM ouvidoria GROUP BY
+email;
+
+SELECT * FROM cliente WHERE reclamacoes = 'Ação' AND classificacao = 'resolvido';
+
+SELECT  * FROM ouvidoria; 
+
+
+insert into fornecedores(cnpj, contato)
+values('12.765.678/00782-11','61 98865-9973');
+
+SELECT * FROM cliente WHERE solicitaçao_pedidos = 'Ação' AND classificacao = 'pedido_aceito';
+
+
+SELECT * FROM cliente WHERE statusCliente IS NULL;
+
+
+SELECT * FROM fornecedor;
+
+insert into Cliente (nome, endereco,contato, cpf) value
+('claudia', 'rua josefa sebadelho 430', '84 8899 7432', '567.880.999.01');
+
+SELECT * FROM cliente WHERE nome LIKE 'A%';
+
+SELECT COUNT(*) AS Quantidade FROM cliente;
+ 
+ SELECT * FROM cCliente;
+ 
+insert into funcionario(nome, cpf) values
+('joao', '230.567.134.06');
+
+ALTER TABLE funcionario ADD COLUMN
+salario FLOAT;
+
+ALTER TABLE funcionario ADD column casado BOOLEAN;
+
+UPDATE funcionario SET salario = 13000;
+
+UPDATE funcionario SET casado = TRUE WHERE nome = 'joao';
+
+
+SELECT * FROM funcionario WHERE nome LIKE 'S_ _ _ ';
+
+
+SELECT * FROM funcionario;
+
+insert into Produto (nome, qualidade) values
+(lactea),
+(excelente),
+(razoavel);
+
+SELECT MAX(preco) AS 'Maior Preço' FROM produto
+;
+SELECT datavenda, COUNT(*) AS produtos FROM venda GROUP BY dataVenda;
+
+SELECT AVG(preco) AS 'Media dos Preços' FROM produto;
+
+
+SELECT * FROM produto;
+
+
+
