@@ -50,8 +50,12 @@ SELECT * FROM cliente WHERE reclamacoes = 'Ação' AND classificacao = 'resolvid
 SELECT  * FROM ouvidoria; 
 
 
-insert into fornecedores(cnpj, contato)
-values('12.765.678/00782-11','61 98865-9973');
+insert into fornecedores(cnpj, contato) values
+('12.765.678/00782-11','61 98865-9973'),
+('89.394.596/49456-67','39 4050 0394'),
+('92.949.046/38940-29', '94 2930 2948'),
+('30.390.489/35867-83', '46 1634 2673'),
+('73.385.374/37489-35', '73 6377 3626');
 
 SELECT * FROM cliente WHERE solicitaçao_pedidos = 'Ação' AND classificacao = 'pedido_aceito';
 
@@ -61,8 +65,13 @@ SELECT * FROM cliente WHERE statusCliente IS NULL;
 
 SELECT * FROM fornecedor;
 
-insert into Cliente (nome, endereco,contato, cpf) value
-('claudia', 'rua josefa sebadelho 430', '84 8899 7432', '567.880.999.01');
+insert into Cliente (nome, endereco,contato, cpf) values
+('claudia', 'rua josefa sebadelho 430', '84 8899 7432', '567.880.999.01'),
+('paula', 'rua coronel cunha 23', ' 61 9867 4950', '929.290.394.04'),
+('joao', 'rua claudinei paulina 50', '93 3949 3995',  '395.495.494.34'),
+('ana', 'rua severino rio babosa 56 ', '93 4758 3748', '839.399.490.83'),
+('anila', 'rua josefa taveira 459', '28 3894 4940', '839.950.499.39'),
+('sara', ' rua padre ze 389', '84 4893 2894', '394.394.954.06');
 
 SELECT * FROM cliente WHERE nome LIKE 'A%';
 
@@ -71,7 +80,11 @@ SELECT COUNT(*) AS Quantidade FROM cliente;
  SELECT * FROM cCliente;
  
 insert into funcionario(nome, cpf) values
-('joao', '230.567.134.06');
+('joao', '230.567.134.06'),
+('kleber', '930.394.399.09'),
+('severina', '289.849.204.30'),
+('Eliza', '938.385.383.23');
+
 
 ALTER TABLE funcionario ADD COLUMN
 salario FLOAT;
